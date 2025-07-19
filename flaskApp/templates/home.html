@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+            <title>{{ title }}</title>
+        {% else %}
+            <title> Welcome to Cogniora </title>
+        {% endif %}
+
+        <link rel='stylesheet' href={{url_for('static', filename='home.css')}}>
+
+    </head>
+    <body>
+        <nav class="nav-color nav-box nav-flex">
+            <div class="nav-div-head nav-flex">
+                    <img class="nav-img" src={{url_for('static', filename='images/logo.png')}}>
+                    <p class="nav-title"> Cogniora </p>
+            </div>
+
+            <div class="nav-sections">
+                <a href="#" class="nav-sections-text"> Home </a>
+                <a href="#" class="nav-sections-text"> Data </a>
+                <a href="#" class="nav-sections-text"> Analytics </a>
+            </div>
+
+            <div class="nav-endsection">
+                <button><a href="#" class=""> Sign In </a></button>
+                <button><a href="#" class=""> Sign Up </a></button>
+            </div>
+
+    </body>
+</html>
