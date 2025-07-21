@@ -43,10 +43,6 @@
 
 }
 
-.nav-logo{
-
-}
-
 .nav-flex{
     display: flex;
     flex-direction: row;
@@ -71,10 +67,6 @@
 a{
     color: white;
     text-decoration: none;
-}
-
-.nav-left{
-
 }
 
 .nav-endsection{
