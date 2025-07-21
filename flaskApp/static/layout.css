@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    color:whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
+.useless{
+    background-color: blanchedalmond;
+}
+
+.nav-color{
+    background-color: white;
+    border: 3px solid whitesmoke;
+    box-shadow: 0 0 15px 0 white;
+}
+
+.nav-box{
+    height: 60px;
+    position: relative;
+}
+
+.nav-div-head{
+    height: 40px;
+    position: relative;
+    padding: 10px 0 0 30px;
+}
+
+.nav-img{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.nav-title{
+    font-family: 'Roboto';
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(243, 105, 243);
+    padding-left: 10px;
+
+}
+
+.nav-logo{
+
+}
+
+.nav-flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-sections{
+    height: 40px;
+    /* position: absolute; */
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.nav-sections-text{
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    padding: 0 15px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-left{
+
+}
+
+.nav-endsection{
+    height: 40px;
+    /* position: absolute; */
+    justify-content: space-evenly;
+    padding-top: 10px;
+    margin-left: 84vh;
+}
+
+button{
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
+    background-color: rgb(57, 248, 239);
+    border: 3px solid rgb(20, 186, 232);
+    margin-left: 10px;
+}
+
+
