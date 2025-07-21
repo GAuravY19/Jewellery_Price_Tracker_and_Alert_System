@@ -1,32 +1,58 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% if title %}
-            <title>{{ title }}</title>
-        {% else %}
-            <title> Welcome to Cogniora </title>
-        {% endif %}
+{% extends "layout.html" %}
 
-        <link rel='stylesheet' href={{url_for('static', filename='home.css')}}>
+{% block content %}
 
-    </head>
-    <body>
-        <nav class="nav-color nav-box nav-flex">
-            <div class="nav-div-head nav-flex">
-                    <img class="nav-img" src={{url_for('static', filename='images/logo.png')}}>
-                    <p class="nav-title"> Cogniora </p>
-            </div>
+<div class='box'>
+    <div class="box-section-1" id='quality-one'>
+        <p class='div-text'>
+            <h1 class="text">Regular Price Tracking</h1>
 
-            <div class="nav-sections">
-                <a href="#" class="nav-sections-text"> Home </a>
-                <a href="#" class="nav-sections-text"> Data </a>
-                <a href="#" class="nav-sections-text"> Analytics </a>
-            </div>
+            <p class="text mini-text"> Stay updated with the latest Jewellery Prices across top Brands<br> -- all in one place.</p>
+        </p>
+    </div>
 
-            <div class="nav-endsection">
-                <button><a href="#" class=""> Sign In </a></button>
-                <button><a href="#" class=""> Sign Up </a></button>
-            </div>
+    <div class="box-section-1" id="quality-two">
+        <p class='div-text'>
+            <h1 class="text">Smart Visualizations</h1>
 
-    </body>
-</html>
+            <p class="text mini-text"> Visualize price movements across categories with <br> clean, easy-to-read trend charts.</p>
+        </p>
+    </div>
+
+    <div class="box-section-2" id="Brands-focused">
+        <h3 class="div-text-b text-b"> Brands Focused </h3>
+    </div>
+
+    <div class="brand-names-box">
+        <div class="box-section-3" id="brand-one"></div>
+        <div class="box-section-3" id="brand-two"></div>
+        <div class="box-section-3" id="brand-three"></div>
+    </div>
+
+    <div class="box-section-1" id="quality-three">
+        <p class='div-text'>
+            <h1 class="text">Insights Engine</h1>
+
+            <p class="text mini-text"> Let our smart system highlight overall segment-level <br> changes and key pricing patterns.</p>
+        </p>
+    </div>
+
+    <div class="box-section-2" id="segments-focused">
+        <h3 class="div-text-b text-b text-s"> Segments Focused </h3>
+    </div>
+
+    <div class="category-names-box">
+        <div class="box-section-4" id="category-ring"></div>
+        <div class="box-section-4" id="category-bangle"></div>
+        <div class="box-section-4" id="category-bracelet"></div>
+        <div class="box-section-4" id="category-earring"></div>
+        <div class="box-section-4" id="category-solitares"></div>
+        <div class="box-section-4" id="category-pendant"></div>
+        <div class="box-section-4" id="category-necklace"></div>
+        <div class="box-section-4" id="category-nosepins"></div>
+        <div class="box-section-4" id="category-mangalsutras"></div>
+    </div>
+</div>
+
+
+{% endblock %}
