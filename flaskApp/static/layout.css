@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 *{
-    color:whitesmoke;
     padding: 0;
     margin: 0;
 }
 
-.useless{
-    background-color: blanchedalmond;
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.87);
 }
 
 .nav-color{
@@ -86,6 +92,55 @@ button{
     background-color: rgb(57, 248, 239);
     border: 3px solid rgb(20, 186, 232);
     margin-left: 10px;
+}
+
+.about-me{
+    background-color: black;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+}
+
+.text-name-s{
+    color: white;
+    font-family: "Tinos";
+    font-size: 18px;
+}
+
+.name{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.email{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.linkedin{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.github{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.instagram{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.text-name{
+    color: white;
+    font-family: "Tinos";
+    font-size: 30px;
+}
+
+footer{
+    margin-top: auto;
 }
 
 
