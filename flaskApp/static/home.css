@@ -62,3 +62,58 @@
     padding-left: 45px;
 
 }
+
+.brand-names-box{
+    /* background-color: red; */
+    height: 15vh;
+    width: 50vw;
+    margin-left: 60px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+.brand-img{
+    height: 12vh;
+    width: 12vw;
+    /* margin: 0 15px; */
+    border-radius: 10px;
+    border: 3px solid rgb(177, 177, 177);
+}
+
+.category-names-box{
+    /* background-color: red; */
+    height: 35vh;
+    width: 50vw;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.box-section-4{
+    /* background-color: rgb(200, 234, 202); */
+    height: 10vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.cat-text{
+    color: black;
+    font-family: 'Winky Rough';
+    font-size: 23px;
+    /* padding: 10px 0 10px 45px; */
+}
+
+.box-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 150px;
+    /* border: 3px solid white; */
+    border-radius: 20px;
+    border: 3px solid rgb(220, 246, 207);
+    background-color: white;
+}
