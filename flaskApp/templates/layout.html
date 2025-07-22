@@ -9,6 +9,7 @@
 
         <link rel='stylesheet' href={{url_for('static', filename='layout.css')}}>
         <link rel='stylesheet' href={{url_for('static', filename='home.css')}}>
+        <link rel='stylesheet' href={{url_for('static', filename='register.css')}}>
 
     </head>
     <body>
@@ -20,13 +21,13 @@
             </div>
 
             <div class="nav-sections">
-                <a href="#" class="nav-sections-text"> Home </a>
+                <a href={{url_for('home')}} class="nav-sections-text"> Home </a>
                 <a href="#" class="nav-sections-text"> Data </a>
                 <a href="#" class="nav-sections-text"> Analytics </a>
             </div>
 
             <div class="nav-endsection">
-                <button><a href="#" class=""> Sign In </a></button>
+                <button><a href={{url_for('login')}} class=""> Sign In </a></button>
                 <button><a href="#" class=""> Sign Up </a></button>
             </div>
         </nav>
@@ -35,6 +36,24 @@
 
         {% block content %}
         {% endblock %}
+
+        <footer class="about-me">
+            <div class="name">
+                <p class="text-name">Gaurav Yadav</p>
+            </div>
+            <div class="email">
+                <a class="text-name-s" href="">Email</a>
+            </div>
+            <div class="linkedin">
+                <a class="text-name-s" href="">Linkedin</a>
+            </div>
+            <div class="github">
+                <a class="text-name-s" href="">Github</a>
+            </div>
+            <div class="instagram">
+                <a class="text-name-s" href="">Instagram</a>
+            </div>
+        </footer>
 
 
     </body>
