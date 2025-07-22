@@ -2,11 +2,10 @@
 
 {% block content %}
 
-<div class='box'>
+<div class="box">
     <div class="box-section-1" id='quality-one'>
         <p class='div-text'>
             <h1 class="text">Regular Price Tracking</h1>
-
             <p class="text mini-text"> Stay updated with the latest Jewellery Prices across top Brands<br> -- all in one place.</p>
         </p>
     </div>
@@ -14,7 +13,6 @@
     <div class="box-section-1" id="quality-two">
         <p class='div-text'>
             <h1 class="text">Smart Visualizations</h1>
-
             <p class="text mini-text"> Visualize price movements across categories with <br> clean, easy-to-read trend charts.</p>
         </p>
     </div>
@@ -24,15 +22,14 @@
     </div>
 
     <div class="brand-names-box">
-        <div class="box-section-3" id="brand-one"></div>
-        <div class="box-section-3" id="brand-two"></div>
-        <div class="box-section-3" id="brand-three"></div>
+        <img class="brand-img" id="brand-one" src={{url_for("static", filename = "images/brandlogo/bluestone.jpg")}} alt="bluestone">
+        <img class="brand-img" id="brand-two" src={{url_for("static", filename = "images/brandlogo/caratlane.jpg")}} alt="caratlane">
+        <img class="brand-img" id="brand-three" src={{url_for("static", filename = "images/brandlogo/tanishq.png")}} alt="tanishq">
     </div>
 
     <div class="box-section-1" id="quality-three">
         <p class='div-text'>
             <h1 class="text">Insights Engine</h1>
-
             <p class="text mini-text"> Let our smart system highlight overall segment-level <br> changes and key pricing patterns.</p>
         </p>
     </div>
@@ -42,15 +39,39 @@
     </div>
 
     <div class="category-names-box">
-        <div class="box-section-4" id="category-ring"></div>
-        <div class="box-section-4" id="category-bangle"></div>
-        <div class="box-section-4" id="category-bracelet"></div>
-        <div class="box-section-4" id="category-earring"></div>
-        <div class="box-section-4" id="category-solitares"></div>
-        <div class="box-section-4" id="category-pendant"></div>
-        <div class="box-section-4" id="category-necklace"></div>
-        <div class="box-section-4" id="category-nosepins"></div>
-        <div class="box-section-4" id="category-mangalsutras"></div>
+        <div class="box-section-4" >
+            <div class='box-text'>
+                <p class="cat-text" id="category-ring">Rings</p>
+            </div>
+            <div class='box-text'>
+                <p class="cat-text" id="category-bangle">Bangles</p>
+            </div>
+            <div class='box-text'>
+                <p class="cat-text" id="category-bracelet">Bracelets</p>
+            </div>
+        </div>
+        <div class="box-section-4" >
+            <div class='box-text'>
+                <p class="cat-text" id="category-earring">Earrings</p>
+            </div>
+            <div class='box-text'>
+                <p class="cat-text" id="category-solitares">Solitares</p>
+            </div>
+            <div class='box-text'>
+                <p class="cat-text" id="category-pendant">Pendants</p>
+            </div>
+        </div>
+        <div class="box-section-4" >
+            <div class='box-text'>
+                <p class="cat-text" id="category-necklace">Necklace</p>
+            </div>
+            <div class='box-text'>
+                <p class="cat-text" id="category-nosepins">Nosepins</p>
+            </div>
+            <div class='box-text'>
+                <p class="cat-text" id="category-mangalsutras">MangalSutras</p>
+            </div>
+        </div>
     </div>
 </div>
 
