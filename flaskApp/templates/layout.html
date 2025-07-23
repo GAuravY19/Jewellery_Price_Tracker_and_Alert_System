@@ -10,6 +10,7 @@
         <link rel='stylesheet' href={{url_for('static', filename='layout.css')}}>
         <link rel='stylesheet' href={{url_for('static', filename='home.css')}}>
         <link rel='stylesheet' href={{url_for('static', filename='register.css')}}>
+        <link rel='stylesheet' href={{url_for('static', filename='login.css')}}>
 
     </head>
     <body>
@@ -27,12 +28,27 @@
             </div>
 
             <div class="nav-endsection">
-                <button><a href={{url_for('login')}} class=""> Sign In </a></button>
-                <button><a href="#" class=""> Sign Up </a></button>
+                {% if current_user.is_authenticated %}
+                    <button><a href={{url_for('login')}} class=""> Profile </a></button>
+                    <button><a href={{url_for('register')}} class=""> Logout </a></button>
+                {% else %}
+                    <button><a href={{url_for('login')}} class=""> Sign In </a></button>
+                    <button><a href={{url_for('register')}} class=""> Sign Up </a></button>
+                {% endif %}
             </div>
         </nav>
 
         <!-- Navbar ends -->
+
+        {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
         {% block content %}
         {% endblock %}
