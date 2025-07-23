@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.register-box{
+    height: 80vh;
+    width: 55vw;
+    /* background-color: red; */
+    margin-left: 300px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: 5px solid whitesmoke;
+    border-radius: 40px;
+}
+
+.legend-text{
+    font-size: 30px;
+    font-family: 'Lexend Giga';
+    padding-top: 15px;
+    padding-left: 280px;
+}
+
+.signup-options{
+    /* background-color: yellow; */
+    height: 10vh;
+    width: 20vw;
+    margin-left: 230px;
+    margin-top: 20px;
+}
+
+.google-signup{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 250px;
+    /* background-color: red; */
+    border: 3px solid rgb(201, 249, 195);
+    border-radius: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.microsoft-signup{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 250px;
+    /* background-color: red; */
+    border: 3px solid rgb(201, 249, 195);
+    /* border: 3px solid white; */
+    border-radius: 30px;
+    background-color: white;
+}
+
+.google-signup img{
+    padding-right: 10px;
+}
+
+.google-signup a{
+    color: black;
+}
+
+.microsoft-signup a{
+    color: black;
+}
+
+.microsoft-signup img{
+    padding-right: 10px;
+}
+
+.separator-line{
+    margin-top: 60px;
+    width: 70%;
+    border: 2px solid gray;
+    margin-left: 100px;
+}
+
+form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element{
+    height: 10vh;
+    width: 30vw;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 170px;
+}
+
+.formlabel{
+    font-family: 'Red Hat Display';
+    font-size: 20px;
+    padding: 8px;
+}
+
+.form-input{
+    height: 7vh;
+    width: auto;
+    border-radius: 10px;
+}
+
+.submit-button{
+    height: 5vh;
+    width: 150px;
+    /* background-color: red; */
+    border: 3px solid white;
+    border-radius: 30px;
+    background-color: rgb(72, 234, 72);
+    font-family: 'Red Hat Display';
+    font-size: 20px;
+
+
+}
+
+
+.form-submit{
+    margin-left: 37%;
+    margin-top: 20px;
+}
+
+
