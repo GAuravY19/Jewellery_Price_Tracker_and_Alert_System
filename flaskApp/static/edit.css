@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.legend-text{
+    font-size: 30px;
+    font-family: 'Lexend Giga';
+    padding-top: 30px;
+    padding-left: 30%;
+}
+
+.submit-button{
+    height: 5vh;
+    width: 200px;
+    /* background-color: red; */
+    border: 3px solid white;
+    border-radius: 30px;
+    background-color: rgb(72, 234, 72);
+    font-family: 'Red Hat Display';
+    font-size: 20px;
+}
+
+
+.form-submit{
+    margin-left: 37%;
+    margin-top: 20px;
+}
+
+.separator-line{
+    margin-top: 30px;
+    width: 70%;
+    border: 2px solid gray;
+    margin-left: 100px;
+}
