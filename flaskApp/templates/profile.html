@@ -1,0 +1,25 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+<div class="profile-box">
+    <div class="profile-pic-box">
+        <img src={{url_for("static", filename = 'images/profilepics/default_1.png')}} alt="profilepic" class='profle-pic'>
+    </div>
+    <div class="profile-info">
+        <div class="username">
+            <p class="holder"> Username:- </p>
+            <p class="value"> Gaurav  </p>
+        </div>
+        <div class="useremail">
+            <p class="holder"> Email :- </p>
+            <p class="value"> Gaurav@gmail.com </p>
+        </div>
+    </div>
+    <button class="edit-details-button">
+        <a href={{url_for('edit')}}> Edit Details </a>
+    </button>
+</div>
+
+
+{% endblock %}
