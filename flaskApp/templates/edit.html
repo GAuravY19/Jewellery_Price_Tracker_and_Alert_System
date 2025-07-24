@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="login-box">
+    <legend class='legend-text'> Update Profile! </legend>
+
+    <hr class='separator-line'></hr>
+
+    <form method='POST' action="">
+        {{form.hidden_tag() }}
+        <div class="form-element">
+            {{ form.Username.label(class='formlabel')}}
+            {{ form.Username(class='form-input') }}
+        </div>
+
+        <div class="form-element">
+            {{ form.email.label(class='formlabel')}}
+            {{ form.email(class='form-input') }}
+        </div>
+
+        <div class="form-element">
+            {{ form.password.label(class='formlabel') }}
+            {{ form.password(class='form-input') }}
+        </div>
+
+        <div class="form-submit">
+            {{ form.submit(class='submit-button') }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}
