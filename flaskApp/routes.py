@@ -1,4 +1,4 @@
-from flaskApp.forms import RegistrationForm, LoginForm
+from flaskApp.forms import RegistrationForm, LoginForm, EditForm
 from flaskApp import app, bcrypt, db, login_manager
 from flask_login import login_required, login_user, current_user
 from flaskApp.models import User
@@ -69,4 +69,15 @@ def login():
 # @app.route('/logout')
 # def logout():
 #     return render_template('logout.html', title = 'Logout')
+
+
+@app.route('/profile', methods = ['GET', 'POST'])
+def profile():
+    # return render_template('profile.html', title=f'{current_user} Profile')
+    return render_template('profile.html', title=f'Profile')
+
+@app.route('/edit', methods = ['GET', 'POST'])
+def edit():
+    form = EditForm()
+    return render_template('edit.html', title='Edit Details', form = form)
 
