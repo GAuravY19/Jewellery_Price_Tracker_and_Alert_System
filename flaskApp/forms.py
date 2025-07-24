@@ -41,3 +41,17 @@ class LoginForm(FlaskForm):
     remeber = BooleanField('Remember Me')
 
     submit = SubmitField('Sign In')
+
+
+class EditForm(FlaskForm):
+    Username = StringField('Username: ',
+                           validators=[DataRequired(), Length(min=6, max=20)])
+
+    email = StringField('Email: ',
+                        validators=[DataRequired(), Email()])
+
+    password = PasswordField('Password: ',
+                             validators=[DataRequired(), Length(min=10)])
+
+    submit = SubmitField('Update Profile')
+
