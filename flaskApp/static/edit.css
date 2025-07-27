@@ -3,14 +3,14 @@
     padding: 0;
 }
 
-.legend-text{
+.edit-legend-text{
     font-size: 30px;
     font-family: 'Lexend Giga';
     padding-top: 30px;
     padding-left: 30%;
 }
 
-.submit-button{
+.edit-submit-button{
     height: 5vh;
     width: 200px;
     /* background-color: red; */
@@ -27,7 +27,7 @@
     margin-top: 20px;
 }
 
-.separator-line{
+.edit-separator-line{
     margin-top: 30px;
     width: 70%;
     border: 2px solid gray;
