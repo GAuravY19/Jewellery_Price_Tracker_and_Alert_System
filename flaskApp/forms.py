@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from flaskApp.models import User
 
 class RegistrationForm(FlaskForm):
-    Username = StringField('Username: ',
+    username = StringField('Username: ',
                            validators=[DataRequired(), Length(min=6, max=20)])
 
     email = StringField('Email: ',
@@ -17,18 +17,18 @@ class RegistrationForm(FlaskForm):
 
     submit = SubmitField('Sign Up')
 
-
-    def validate_username(self, Username):
-        user = User.query.filter_by(username = Username.data).first()
+    def validate_username(self, username):
+        user = User.query.filter_by(username = username.data).first()
 
         if user:
-            raise ValidationError('Username Already exists')
+            print("Validation Error")
+            raise ValidationError('Username already exists!')
 
     def validate_email(self, email):
-        email = User.query.filter_by(email = email.data)
+        check_email = User.query.filter_by(email = email.data).first()
 
-        if email:
-            raise ValidationError('Email Already exists')
+        if check_email:
+            raise ValidationError('Email already exists!')
 
 
 class LoginForm(FlaskForm):
@@ -38,7 +38,7 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password: ',
                              validators=[DataRequired(), Length(min=10)])
 
-    remeber = BooleanField('Remember Me')
+    remember = BooleanField('Remember Me')
 
     submit = SubmitField('Sign In')
 
@@ -50,8 +50,8 @@ class EditForm(FlaskForm):
     email = StringField('Email: ',
                         validators=[DataRequired(), Email()])
 
-    password = PasswordField('Password: ',
-                             validators=[DataRequired(), Length(min=10)])
+    # password = PasswordField('Password: ',
+    #                          validators=[DataRequired(), Length(min=10)])
 
     submit = SubmitField('Update Profile')
 
