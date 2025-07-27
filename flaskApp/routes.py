@@ -1,8 +1,8 @@
+from flask import redirect, url_for, render_template, flash, request
 from flaskApp.forms import RegistrationForm, LoginForm, EditForm
 from flaskApp import app, bcrypt, db, login_manager
-from flask_login import login_required, login_user, current_user
+from flask_login import login_required, login_user, current_user, logout_user
 from flaskApp.models import User
-from flask import redirect, url_for, render_template, flash
 import random
 import os
 
@@ -32,7 +32,7 @@ def register():
     if form.validate_on_submit():
         hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         image = os.path.join('D:\Final_Projects\Scraping_Project\Jewellery_Price_Tracker_and_Alert_System\flaskApp\static\images\profilepics', f'default_{int(random.randrange(0,5))}.png')
-        user = User(username = form.Username.data,
+        user = User(username = form.username.data,
                     email = form.email.data,
                     image_file = image,
                     password = hashed_pw)
@@ -57,7 +57,10 @@ def login():
         user = User.query.filter_by(email = form.email.data).first()
 
         if user and bcrypt.check_password_hash(user.password, form.password.data):
-            login_user(user)
+            login_user(user, remember=form.remember.data)
+            next_page = request.args.get('next')
+            if next_page:
+                return redirect(next_page)
             return redirect(url_for('home'))
 
         else:
@@ -66,15 +69,17 @@ def login():
     return render_template('login.html', title = 'Sign In', form = form)
 
 
-# @app.route('/logout')
-# def logout():
-#     return render_template('logout.html', title = 'Logout')
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
 
 
 @app.route('/profile', methods = ['GET', 'POST'])
+@login_required
 def profile():
-    # return render_template('profile.html', title=f'{current_user} Profile')
-    return render_template('profile.html', title=f'Profile')
+    return render_template('profile.html', title='Profile Page')
 
 @app.route('/edit', methods = ['GET', 'POST'])
 def edit():
