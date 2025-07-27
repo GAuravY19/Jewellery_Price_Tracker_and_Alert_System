@@ -31,8 +31,8 @@
 
             <div class="nav-endsection">
                 {% if current_user.is_authenticated %}
-                    <button><a href={{url_for('login')}} class=""> Profile </a></button>
-                    <button><a href={{url_for('register')}} class=""> Logout </a></button>
+                    <button><a href={{url_for('profile')}} class=""> Profile </a></button>
+                    <button><a href={{url_for('logout')}} class=""> Logout </a></button>
                 {% else %}
                     <button><a href={{url_for('login')}} class=""> Sign In </a></button>
                     <button><a href={{url_for('register')}} class=""> Sign Up </a></button>
