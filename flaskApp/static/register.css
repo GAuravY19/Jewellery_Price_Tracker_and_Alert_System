@@ -7,7 +7,7 @@
 }
 
 .register-box{
-    height: 80vh;
+    height: 100vh;
     width: 55vw;
     /* background-color: red; */
     margin-left: 300px;
@@ -98,6 +98,7 @@ form{
     display: flex;
     flex-direction: column;
     margin-left: 170px;
+    margin-bottom: 5%;
 }
 
 .formlabel{
@@ -108,8 +109,16 @@ form{
 
 .form-input{
     height: 7vh;
+    min-height: 4vh;
     width: auto;
     border-radius: 10px;
+    padding-left: 4px;
+}
+
+.invalid-feedback{
+    color: red;
+    font-size: 15px;
+    padding-top: 5px;
 }
 
 .submit-button{
