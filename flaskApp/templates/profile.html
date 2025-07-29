@@ -9,11 +9,11 @@
     <div class="profile-info">
         <div class="username">
             <p class="holder"> Username:- </p>
-            <p class="value"> Gaurav  </p>
+            <p class="value"> {{ current_user.username }}  </p>
         </div>
         <div class="useremail">
             <p class="holder"> Email :- </p>
-            <p class="value"> Gaurav@gmail.com </p>
+            <p class="value"> {{current_user.email}} </p>
         </div>
     </div>
     <button class="edit-details-button">
