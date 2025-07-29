@@ -1,5 +1,6 @@
-from flaskApp import db, login_manager
+from flaskApp import db, login_manager, app
 from flask_login import UserMixin
+from itsdangerous import URLSafeTimedSerializer as Serial
 
 @login_manager.user_loader
 def load_user(user_id):
