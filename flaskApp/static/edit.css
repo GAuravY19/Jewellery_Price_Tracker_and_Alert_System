@@ -3,11 +3,32 @@
     padding: 0;
 }
 
+.edit-box{
+    height: 53vh;
+    width: 50vw;
+    margin-top: 8%;
+    margin-left: 25%;
+    border-radius: 20px;
+    border: 5px solid rgb(194, 194, 194);
+    /* display: flex; */
+}
+
 .edit-legend-text{
     font-size: 30px;
     font-family: 'Lexend Giga';
     padding-top: 30px;
-    padding-left: 30%;
+    padding-left: 29%;
+}
+
+.edit-form-element{
+    height: 7vh;
+    min-height: 10vh;
+    width: 30vw;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-bottom: 5%;
 }
 
 .edit-submit-button{
@@ -22,9 +43,9 @@
 }
 
 
-.form-submit{
-    margin-left: 37%;
-    margin-top: 20px;
+.edit-form-submit{
+    margin-left: 34%;
+    margin-top: 5px;
 }
 
 .edit-separator-line{
