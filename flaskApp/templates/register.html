@@ -63,9 +63,11 @@
         <div class="form-submit">
             {{ form.submit(class='submit-button') }}
         </div>
-
-
     </form>
+
+    <div class="already">
+        <p> Already have an Account ? <a href={{url_for('login')}}> Sign In </a></p>
+    </div>
 </div>
 
 {%endblock%}
