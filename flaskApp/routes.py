@@ -84,5 +84,16 @@ def profile():
 @app.route('/edit', methods = ['GET', 'POST'])
 def edit():
     form = EditForm()
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Your account has been updated', 'success')
+        return redirect(url_for('profile'))
+
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+
     return render_template('edit.html', title='Edit Details', form = form)
 
