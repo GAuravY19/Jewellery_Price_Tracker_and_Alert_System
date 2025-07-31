@@ -1,51 +1,108 @@
-from playwright.sync_api import sync_playwright
+from playwright.async_api import async_playwright
 import time
+import asyncio
+from datetime import datetime
+import psycopg2
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+conn = psycopg2.connect(host=os.getenv('host'),
+                        dbname = os.getenv('dbname_b'),
+                        user=os.getenv('user'),
+                        password = os.getenv('password'),
+                        port=os.getenv('port'))
+
+cur = conn.cursor()
+
+async def find_product(prod_name,cate:str, cur=cur):
+    cur.execute(f'''SELECT id
+                    FROM {cate.lower()}
+                    WHERE product_name=%s''', (str(prod_name),))
+    check = cur.fetchone()
+
+    return check
+
 
 PRODUCTS = ['Rings', 'Earrings', 'Solitaires', 'Nosepins', 'Bracelets', 'Bangles',
             'Necklace', 'Pendants', 'Mangalsutras']
 
-PW = sync_playwright().start()
-BROWSER = PW.chromium.launch(headless=False)
+def id_generator(prod_name, prod_count):
+    data = {'Rings': 'RIB',
+            'Earrings': 'EAB',
+            'Solitaires': 'SOB',
+            'Nosepins': 'NOB',
+            'Bracelets': 'BRB',
+            'Bangles': 'BAB',
+            'Necklace': 'NEB',
+            'Pendants': 'PEB',
+            'Mangalsutras': 'MAB'}
 
-PAGE = BROWSER.new_page()
-PAGE.goto("https://www.bluestone.com/")
-PAGE.wait_for_load_state()
+    id = data[prod_name]+str(prod_count)
 
-PAGE.locator('.deny-btn').click()
-PAGE.locator('xpath=//input[@id="search_query_top_elastic_search"]').fill(PRODUCTS[0])
+    return id
 
-time.sleep(3)
 
-PAGE.locator('.button').click()
+async def scrape_bluestone(cate:str) -> None:
+    async with async_playwright() as PW:
+        BROWSER = await PW.chromium.launch(headless=False)
 
-time.sleep(5)
+        PAGE = await BROWSER.new_page()
+        await PAGE.goto("https://www.bluestone.com/", timeout=90000)
 
-total_designs = PAGE.locator("xpath =//span[@class='total-designs']").text_content().split(" ")[0]
-total_designs = int(total_designs)
-print(total_designs)
+        await PAGE.locator('.deny-btn').click()
+        await PAGE.locator('xpath=//input[@id="search_query_top_elastic_search"]').fill(cate)
 
-prod = []
+        time.sleep(3)
 
-i = 1
-while i != 50:
-    PAGE.mouse.wheel(0,200)
-    print(i)
-    i += 1
+        await PAGE.locator('.button').click()
 
-time.sleep(3)
+        time.sleep(5)
 
-ui_elements = PAGE.locator("#product_list_ui li").all()
+        total_designs_text = await PAGE.locator("xpath =//span[@class='total-designs']").text_content()
+        total_designs = total_designs_text.split(" ")[0]
+        total_designs = int(total_designs)
 
-count = len(ui_elements)
+        i = 1
+        while i != 1:
+            await PAGE.mouse.wheel(0,100)
+            time.sleep(0.5)
+            i += 1
 
-print('Total products found : ', count)
-for i in ui_elements:
-    selling_price = i.get_attribute("data-sellingprice")
-    prod_name = i.get_attribute('data-pname')
-    print(selling_price)
-    break
+        time.sleep(3)
 
-print('Done All Jewellery')
+        ui_elements = await PAGE.locator("#product_list_ui li").all()
 
-time.sleep(180)
-BROWSER.close()
+        for i in ui_elements:
+            selling_price = await i.get_attribute("data-sellingprice")
+            prod_name = await i.get_attribute('data-pname')
+            checks = await find_product(prod_name, cate)
+
+            if checks is not None:
+                print('Prod found')
+                break
+
+            else:
+                cur.execute(f'SELECT COUNT(*) FROM {cate.lower()}')
+                count = cur.fetchone()[0]+1
+                id = id_generator(cate, count)
+                cur.execute(f'INSERT INTO {cate.lower()} VALUES {id, prod_name, selling_price}')
+                conn.commit()
+                break
+
+
+        print('Done All Jewellery')
+
+        time.sleep(3)
+        await BROWSER.close()
+
+
+if __name__ == "__main__":
+
+    async def main():
+        for i in PRODUCTS:
+            await scrape_bluestone(i)
+            break
+
+    asyncio.run(main())
