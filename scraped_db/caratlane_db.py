@@ -62,7 +62,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS pendants(
 )""")
 
 cur.execute("""CREATE TABLE IF NOT EXISTS mangalsutras(
-    id INT PRIMARY KEY,
+    id VARCHAR PRIMARY KEY,
     product_name VARCHAR(1024),
     date_price VARCHAR(64)
 )""")
